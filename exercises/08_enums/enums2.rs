@@ -6,7 +6,20 @@ struct Point {
 
 #[derive(Debug)]
 enum Message {
-    // TODO: Define the different variants used below.
+    // A variant with named fields (struct-like)
+    Resize { width: u64, height: u64 },
+
+    // A variant holding a single type (the Point struct)
+    Move(Point),
+
+    // A variant holding a String
+    Echo(String),
+
+    // A variant holding three u8 values (tuple-like)
+    ChangeColor(u8, u8, u8),
+
+    // A variant with no data (unit-like)
+    Quit,
 }
 
 impl Message {
